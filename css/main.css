@@ -105,7 +105,7 @@ body {
 ===============================================
 */
 .image-bg {
-	background-image: url(../img/background-image.png);
+	background-image: url(../img/bg-img.jpg);
     background-repeat: no-repeat;
     background-size: cover;
     max-width: 100%;

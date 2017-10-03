@@ -3784,4 +3784,4 @@
   };
 
   return new Lightbox();
-}));
+})) ;
