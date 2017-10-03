@@ -1,14 +1,8 @@
-
-
-
-/*
-===============================================
---------------- 1. CSS Inits ------------------
-===============================================
-*/
-
 body {
-	font-family: "Open Sans", sans-serif;
+    background-size: cover;
+    background-attachment: fixed;
+    background-position: center center;
+    font-family: "Open Sans", sans-serif;
 }
 
 .page_wrapper {
