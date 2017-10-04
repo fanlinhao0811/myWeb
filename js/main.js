@@ -1,3 +1,4 @@
+
 /**
  * Owl Carousel v2.2.1
  * Copyright 2013-2017 David Deutsch
@@ -165,7 +166,7 @@
 
     $.each(Owl.Plugins, $.proxy(function(key, plugin) {
       this._plugins[key.charAt(0).toLowerCase() + key.slice(1)]
-        = new plugin(this);
+          = new plugin(this);
     }, this));
 
     $.each(Owl.Workers, $.proxy(function(priority, worker) {
@@ -283,13 +284,13 @@
     filter: [ 'width', 'items', 'settings' ],
     run: function(cache) {
       var margin = this.settings.margin || '',
-        grid = !this.settings.autoWidth,
-        rtl = this.settings.rtl,
-        css = {
-          'width': 'auto',
-          'margin-left': rtl ? margin : '',
-          'margin-right': rtl ? '' : margin
-        };
+          grid = !this.settings.autoWidth,
+          rtl = this.settings.rtl,
+          css = {
+            'width': 'auto',
+            'margin-left': rtl ? margin : '',
+            'margin-right': rtl ? '' : margin
+          };
 
       !grid && this.$stage.children().css(css);
 
@@ -299,10 +300,10 @@
     filter: [ 'width', 'items', 'settings' ],
     run: function(cache) {
       var width = (this.width() / this.settings.items).toFixed(3) - this.settings.margin,
-        merge = null,
-        iterator = this._items.length,
-        grid = !this.settings.autoWidth,
-        widths = [];
+          merge = null,
+          iterator = this._items.length,
+          grid = !this.settings.autoWidth,
+          widths = [];
 
       cache.items = {
         merge: false,
@@ -324,14 +325,14 @@
     filter: [ 'items', 'settings' ],
     run: function() {
       var clones = [],
-        items = this._items,
-        settings = this.settings,
-        // TODO: Should be computed from number of min width items in stage
-        view = Math.max(settings.items * 2, 4),
-        size = Math.ceil(items.length / 2) * 2,
-        repeat = settings.loop && items.length ? settings.rewind ? view : Math.max(view, size) : 0,
-        append = '',
-        prepend = '';
+          items = this._items,
+          settings = this.settings,
+      // TODO: Should be computed from number of min width items in stage
+          view = Math.max(settings.items * 2, 4),
+          size = Math.ceil(items.length / 2) * 2,
+          repeat = settings.loop && items.length ? settings.rewind ? view : Math.max(view, size) : 0,
+          append = '',
+          prepend = '';
 
       repeat /= 2;
 
@@ -352,11 +353,11 @@
     filter: [ 'width', 'items', 'settings' ],
     run: function() {
       var rtl = this.settings.rtl ? 1 : -1,
-        size = this._clones.length + this._items.length,
-        iterator = -1,
-        previous = 0,
-        current = 0,
-        coordinates = [];
+          size = this._clones.length + this._items.length,
+          iterator = -1,
+          previous = 0,
+          current = 0,
+          coordinates = [];
 
       while (++iterator < size) {
         previous = coordinates[iterator - 1] || 0;
@@ -370,12 +371,12 @@
     filter: [ 'width', 'items', 'settings' ],
     run: function() {
       var padding = this.settings.stagePadding,
-        coordinates = this._coordinates,
-        css = {
-          'width': Math.ceil(Math.abs(coordinates[coordinates.length - 1])) + padding * 2,
-          'padding-left': padding || '',
-          'padding-right': padding || ''
-        };
+          coordinates = this._coordinates,
+          css = {
+            'width': Math.ceil(Math.abs(coordinates[coordinates.length - 1])) + padding * 2,
+            'padding-left': padding || '',
+            'padding-right': padding || ''
+          };
 
       this.$stage.css(css);
     }
@@ -383,8 +384,8 @@
     filter: [ 'width', 'items', 'settings' ],
     run: function(cache) {
       var iterator = this._coordinates.length,
-        grid = !this.settings.autoWidth,
-        items = this.$stage.children();
+          grid = !this.settings.autoWidth,
+          items = this.$stage.children();
 
       if (grid && cache.items.merge) {
         while (iterator--) {
@@ -417,17 +418,17 @@
     filter: [ 'width', 'position', 'items', 'settings' ],
     run: function() {
       var rtl = this.settings.rtl ? 1 : -1,
-        padding = this.settings.stagePadding * 2,
-        begin = this.coordinates(this.current()) + padding,
-        end = begin + this.width() * rtl,
-        inner, outer, matches = [], i, n;
+          padding = this.settings.stagePadding * 2,
+          begin = this.coordinates(this.current()) + padding,
+          end = begin + this.width() * rtl,
+          inner, outer, matches = [], i, n;
 
       for (i = 0, n = this._coordinates.length; i < n; i++) {
         inner = this._coordinates[i - 1] || 0;
         outer = Math.abs(this._coordinates[i]) + padding * rtl;
 
         if ((this.op(inner, '<=', begin) && (this.op(inner, '>', end)))
-          || (this.op(outer, '<', begin) && this.op(outer, '>', end))) {
+            || (this.op(outer, '<', begin) && this.op(outer, '>', end))) {
           matches.push(i);
         }
       }
@@ -467,7 +468,7 @@
 
     // create stage
     this.$stage = $('<' + this.settings.stageElement + ' class="' + this.settings.stageClass + '"/>')
-      .wrap('<div class="' + this.settings.stageOuterClass + '"/>');
+        .wrap('<div class="' + this.settings.stageOuterClass + '"/>');
 
     // append stage
     this.$element.append(this.$stage.parent());
@@ -485,8 +486,8 @@
     }
 
     this.$element
-      .removeClass(this.options.loadingClass)
-      .addClass(this.options.loadedClass);
+        .removeClass(this.options.loadingClass)
+        .addClass(this.options.loadedClass);
 
     // register event handlers
     this.registerEventHandlers();
@@ -503,9 +504,9 @@
    */
   Owl.prototype.setup = function() {
     var viewport = this.viewport(),
-      overwrites = this.options.responsive,
-      match = -1,
-      settings = null;
+        overwrites = this.options.responsive,
+        match = -1,
+        settings = null;
 
     if (!overwrites) {
       settings = $.extend({}, this.options);
@@ -525,7 +526,7 @@
       // responsive class
       if (settings.responsiveClass) {
         this.$element.attr('class',
-          this.$element.attr('class').replace(new RegExp('(' + this.options.responsiveClass + '-)\\S+\\s', 'g'), '$1' + match)
+            this.$element.attr('class').replace(new RegExp('(' + this.options.responsiveClass + '-)\\S+\\s', 'g'), '$1' + match)
         );
       }
     }
@@ -559,7 +560,7 @@
 
     if (!event.data) {
       event.data = $('<' + this.settings.itemElement + '/>')
-        .addClass(this.options.itemClass).append(item)
+          .addClass(this.options.itemClass).append(item)
     }
 
     this.trigger('prepared', { content: event.data });
@@ -573,9 +574,9 @@
    */
   Owl.prototype.update = function() {
     var i = 0,
-      n = this._pipe.length,
-      filter = $.proxy(function(p) { return this[p] }, this._invalidated),
-      cache = {};
+        n = this._pipe.length,
+        filter = $.proxy(function(p) { return this[p] }, this._invalidated),
+        cache = {};
 
     while (i < n) {
       if (this._invalidated.all || $.grep(this._pipe[i].filter, filter).length > 0) {
@@ -720,8 +721,8 @@
       stage = this.$stage.position();
       stage = {
         x: this.settings.rtl ?
-          stage.left + this.$stage.width() - this.width() + this.settings.margin :
-          stage.left,
+        stage.left + this.$stage.width() - this.width() + this.settings.margin :
+            stage.left,
         y: stage.top
       };
     }
@@ -767,10 +768,10 @@
    */
   Owl.prototype.onDragMove = function(event) {
     var minimum = null,
-      maximum = null,
-      pull = null,
-      delta = this.difference(this._drag.pointer, this.pointer(event)),
-      stage = this.difference(this._drag.stage.start, delta);
+        maximum = null,
+        pull = null,
+        delta = this.difference(this._drag.pointer, this.pointer(event)),
+        stage = this.difference(this._drag.stage.start, delta);
 
     if (!this.is('dragging')) {
       return;
@@ -803,8 +804,8 @@
    */
   Owl.prototype.onDragEnd = function(event) {
     var delta = this.difference(this._drag.pointer, this.pointer(event)),
-      stage = this._drag.stage.current,
-      direction = delta.x > 0 ^ this.settings.rtl ? 'left' : 'right';
+        stage = this._drag.stage.current,
+        direction = delta.x > 0 ^ this.settings.rtl ? 'left' : 'right';
 
     $(document).off('.owl.core');
 
@@ -841,9 +842,9 @@
    */
   Owl.prototype.closest = function(coordinate, direction) {
     var position = -1,
-      pull = 30,
-      width = this.width(),
-      coordinates = this.coordinates();
+        pull = 30,
+        width = this.width(),
+        coordinates = this.coordinates();
 
     if (!this.settings.freeDrag) {
       // check closest item
@@ -851,12 +852,12 @@
         // on a left pull, check on current index
         if (direction === 'left' && coordinate > value - pull && coordinate < value + pull) {
           position = index;
-        // on a right pull, check on previous index
-        // to do so, subtract width from value and set position = index + 1
+          // on a right pull, check on previous index
+          // to do so, subtract width from value and set position = index + 1
         } else if (direction === 'right' && coordinate > value - width - pull && coordinate < value - width + pull) {
           position = index + 1;
         } else if (this.op(coordinate, '<', value)
-          && this.op(coordinate, '>', coordinates[index + 1] || value - width)) {
+            && this.op(coordinate, '>', coordinates[index + 1] || value - width)) {
           position = direction === 'left' ? index + 1 : index;
         }
         return position === -1;
@@ -994,7 +995,7 @@
    */
   Owl.prototype.normalize = function(position, relative) {
     var n = this._items.length,
-      m = relative ? 0 : this._clones.length;
+        m = relative ? 0 : this._clones.length;
 
     if (!this.isNumeric(position) || n < 1) {
       position = undefined;
@@ -1024,10 +1025,10 @@
    */
   Owl.prototype.maximum = function(relative) {
     var settings = this.settings,
-      maximum = this._coordinates.length,
-      iterator,
-      reciprocalItemsWidth,
-      elementWidth;
+        maximum = this._coordinates.length,
+        iterator,
+        reciprocalItemsWidth,
+        elementWidth;
 
     if (settings.loop) {
       maximum = this._clones.length / 2 + this._items.length - 1;
@@ -1103,8 +1104,8 @@
    */
   Owl.prototype.clones = function(position) {
     var odd = this._clones.length / 2,
-      even = odd + this._items.length,
-      map = function(index) { return index % 2 === 0 ? even + index / 2 : odd - (index + 1) / 2 };
+        even = odd + this._items.length,
+        map = function(index) { return index % 2 === 0 ? even + index / 2 : odd - (index + 1) / 2 };
 
     if (position === undefined) {
       return $.map(this._clones, function(v, i) { return map(i) });
@@ -1136,8 +1137,8 @@
    */
   Owl.prototype.coordinates = function(position) {
     var multiplier = 1,
-      newPosition = position - 1,
-      coordinate;
+        newPosition = position - 1,
+        coordinate;
 
     if (position === undefined) {
       return $.map(this._coordinates, $.proxy(function(coordinate, index) {
@@ -1186,12 +1187,12 @@
    */
   Owl.prototype.to = function(position, speed) {
     var current = this.current(),
-      revert = null,
-      distance = position - this.relative(current),
-      direction = (distance > 0) - (distance < 0),
-      items = this._items.length,
-      minimum = this.minimum(),
-      maximum = this.maximum();
+        revert = null,
+        distance = position - this.relative(current),
+        direction = (distance > 0) - (distance < 0),
+        items = this._items.length,
+        minimum = this.minimum(),
+        maximum = this.maximum();
 
     if (this.settings.loop) {
       if (!this.settings.rewind && Math.abs(distance) > items / 2) {
@@ -1415,14 +1416,14 @@
     this.$stage.children().unwrap();
 
     this.$element
-      .removeClass(this.options.refreshClass)
-      .removeClass(this.options.loadingClass)
-      .removeClass(this.options.loadedClass)
-      .removeClass(this.options.rtlClass)
-      .removeClass(this.options.dragClass)
-      .removeClass(this.options.grabClass)
-      .attr('class', this.$element.attr('class').replace(new RegExp(this.options.responsiveClass + '-\\S+\\s', 'g'), ''))
-      .removeData('owl.carousel');
+        .removeClass(this.options.refreshClass)
+        .removeClass(this.options.loadingClass)
+        .removeClass(this.options.loadedClass)
+        .removeClass(this.options.rtlClass)
+        .removeClass(this.options.dragClass)
+        .removeClass(this.options.grabClass)
+        .attr('class', this.$element.attr('class').replace(new RegExp(this.options.responsiveClass + '-\\S+\\s', 'g'), ''))
+        .removeData('owl.carousel');
   };
 
   /**
@@ -1495,11 +1496,11 @@
     var status = {
       item: { count: this._items.length, index: this.current() }
     }, handler = $.camelCase(
-      $.grep([ 'on', name, namespace ], function(v) { return v })
-        .join('-').toLowerCase()
+        $.grep([ 'on', name, namespace ], function(v) { return v })
+            .join('-').toLowerCase()
     ), event = $.Event(
-      [ name, 'owl', namespace || 'carousel' ].join('.').toLowerCase(),
-      $.extend({ relatedTarget: this }, status, data)
+        [ name, 'owl', namespace || 'carousel' ].join('.').toLowerCase(),
+        $.extend({ relatedTarget: this }, status, data)
     );
 
     if (!this._supress[name]) {
@@ -1613,7 +1614,7 @@
     event = event.originalEvent || event || window.event;
 
     event = event.touches && event.touches.length ?
-      event.touches[0] : event.changedTouches && event.changedTouches.length ?
+        event.touches[0] : event.changedTouches && event.changedTouches.length ?
         event.changedTouches[0] : event;
 
     if (event.pageX) {
@@ -1662,7 +1663,7 @@
 
     return this.each(function() {
       var $this = $(this),
-        data = $this.data('owl.carousel');
+          data = $this.data('owl.carousel');
 
       if (!data) {
         data = new Owl(this, typeof option == 'object' && option);
@@ -1855,11 +1856,11 @@
 
         if ((e.property && e.property.name == 'position') || e.type == 'initialized') {
           var settings = this._core.settings,
-            n = (settings.center && Math.ceil(settings.items / 2) || settings.items),
-            i = ((settings.center && n * -1) || 0),
-            position = (e.property && e.property.value !== undefined ? e.property.value : this._core.current()) + i,
-            clones = this._core.clones().length,
-            load = $.proxy(function(i, v) { this.load(v) }, this);
+              n = (settings.center && Math.ceil(settings.items / 2) || settings.items),
+              i = ((settings.center && n * -1) || 0),
+              position = (e.property && e.property.value !== undefined ? e.property.value : this._core.current()) + i,
+              clones = this._core.clones().length,
+              load = $.proxy(function(i, v) { this.load(v) }, this);
 
           while (i++ < n) {
             this.load(clones / 2 + this._core.relative(position));
@@ -1892,7 +1893,7 @@
    */
   Lazy.prototype.load = function(position) {
     var $item = this._core.$stage.children().eq(position),
-      $elements = $item && $item.find('.owl-lazy');
+        $elements = $item && $item.find('.owl-lazy');
 
     if (!$elements || $.inArray($item.get(0), this._loaded) > -1) {
       return;
@@ -1900,7 +1901,7 @@
 
     $elements.each($.proxy(function(index, element) {
       var $element = $(element), image,
-        url = (window.devicePixelRatio > 1 && $element.attr('data-src-retina')) || $element.attr('data-src');
+          url = (window.devicePixelRatio > 1 && $element.attr('data-src-retina')) || $element.attr('data-src');
 
       this._core.trigger('load', { element: $element, url: url }, 'lazy');
 
@@ -1984,7 +1985,7 @@
       }, this),
       'loaded.owl.lazy': $.proxy(function(e) {
         if (e.namespace && this._core.settings.autoHeight
-          && e.element.closest('.' + this._core.settings.itemClass).index() === this._core.current()) {
+            && e.element.closest('.' + this._core.settings.itemClass).index() === this._core.current()) {
           this.update();
         }
       }, this)
@@ -2011,10 +2012,10 @@
    */
   AutoHeight.prototype.update = function() {
     var start = this._core._current,
-      end = start + this._core.settings.items,
-      visible = this._core.$stage.children().toArray().slice(start, end),
-      heights = [],
-      maxheight = 0;
+        end = start + this._core.settings.items,
+        visible = this._core.$stage.children().toArray().slice(start, end),
+        heights = [],
+        maxheight = 0;
 
     $.each(visible, function(index, item) {
       heights.push($(item).height());
@@ -2023,8 +2024,8 @@
     maxheight = Math.max.apply(null, heights);
 
     this._core.$stage.parent()
-      .height(maxheight)
-      .addClass(this._core.settings.autoHeightClass);
+        .height(maxheight)
+        .addClass(this._core.settings.autoHeightClass);
   };
 
   AutoHeight.prototype.destroy = function() {
@@ -2147,7 +2148,7 @@
    * @param {jQuery} item - The item containing the video.
    */
   Video.prototype.fetch = function(target, item) {
-      var type = (function() {
+    var type = (function() {
           if (target.attr('data-vimeo-id')) {
             return 'vimeo';
           } else if (target.attr('data-vzaar-id')) {
@@ -2164,16 +2165,16 @@
     if (url) {
 
       /*
-          Parses the id's out of the following urls (and probably more):
-          https://www.youtube.com/watch?v=:id
-          https://youtu.be/:id
-          https://vimeo.com/:id
-          https://vimeo.com/channels/:channel/:id
-          https://vimeo.com/groups/:group/videos/:id
-          https://app.vzaar.com/videos/:id
+       Parses the id's out of the following urls (and probably more):
+       https://www.youtube.com/watch?v=:id
+       https://youtu.be/:id
+       https://vimeo.com/:id
+       https://vimeo.com/channels/:channel/:id
+       https://vimeo.com/groups/:group/videos/:id
+       https://app.vzaar.com/videos/:id
 
-          Visual example: https://regexper.com/#(http%3A%7Chttps%3A%7C)%5C%2F%5C%2F(player.%7Cwww.%7Capp.)%3F(vimeo%5C.com%7Cyoutu(be%5C.com%7C%5C.be%7Cbe%5C.googleapis%5C.com)%7Cvzaar%5C.com)%5C%2F(video%5C%2F%7Cvideos%5C%2F%7Cembed%5C%2F%7Cchannels%5C%2F.%2B%5C%2F%7Cgroups%5C%2F.%2B%5C%2F%7Cwatch%5C%3Fv%3D%7Cv%5C%2F)%3F(%5BA-Za-z0-9._%25-%5D*)(%5C%26%5CS%2B)%3F
-      */
+       Visual example: https://regexper.com/#(http%3A%7Chttps%3A%7C)%5C%2F%5C%2F(player.%7Cwww.%7Capp.)%3F(vimeo%5C.com%7Cyoutu(be%5C.com%7C%5C.be%7Cbe%5C.googleapis%5C.com)%7Cvzaar%5C.com)%5C%2F(video%5C%2F%7Cvideos%5C%2F%7Cembed%5C%2F%7Cchannels%5C%2F.%2B%5C%2F%7Cgroups%5C%2F.%2B%5C%2F%7Cwatch%5C%3Fv%3D%7Cv%5C%2F)%3F(%5BA-Za-z0-9._%25-%5D*)(%5C%26%5CS%2B)%3F
+       */
 
       id = url.match(/(http:|https:|)\/\/(player.|www.|app.)?(vimeo\.com|youtu(be\.com|\.be|be\.googleapis\.com)|vzaar\.com)\/(video\/|videos\/|embed\/|channels\/.+\/|groups\/.+\/|watch\?v=|v\/)?([A-Za-z0-9._%-]*)(\&\S+)?/);
 
@@ -2212,24 +2213,24 @@
    */
   Video.prototype.thumbnail = function(target, video) {
     var tnLink,
-      icon,
-      path,
-      dimensions = video.width && video.height ? 'style="width:' + video.width + 'px;height:' + video.height + 'px;"' : '',
-      customTn = target.find('img'),
-      srcType = 'src',
-      lazyClass = '',
-      settings = this._core.settings,
-      create = function(path) {
-        icon = '<div class="owl-video-play-icon"></div>';
+        icon,
+        path,
+        dimensions = video.width && video.height ? 'style="width:' + video.width + 'px;height:' + video.height + 'px;"' : '',
+        customTn = target.find('img'),
+        srcType = 'src',
+        lazyClass = '',
+        settings = this._core.settings,
+        create = function(path) {
+          icon = '<div class="owl-video-play-icon"></div>';
 
-        if (settings.lazyLoad) {
-          tnLink = '<div class="owl-video-tn ' + lazyClass + '" ' + srcType + '="' + path + '"></div>';
-        } else {
-          tnLink = '<div class="owl-video-tn" style="opacity:1;background-image:url(' + path + ')"></div>';
-        }
-        target.after(tnLink);
-        target.after(icon);
-      };
+          if (settings.lazyLoad) {
+            tnLink = '<div class="owl-video-tn ' + lazyClass + '" ' + srcType + '="' + path + '"></div>';
+          } else {
+            tnLink = '<div class="owl-video-tn" style="opacity:1;background-image:url(' + path + ')"></div>';
+          }
+          target.after(tnLink);
+          target.after(icon);
+        };
 
     // wrap video content into owl-video-wrapper div
     target.wrap('<div class="owl-video-wrapper"' + dimensions + '></div>');
@@ -2294,11 +2295,11 @@
    */
   Video.prototype.play = function(event) {
     var target = $(event.target),
-      item = target.closest('.' + this._core.settings.itemClass),
-      video = this._videos[item.attr('data-video')],
-      width = video.width || '100%',
-      height = video.height || this._core.$stage.height(),
-      html;
+        item = target.closest('.' + this._core.settings.itemClass),
+        video = this._videos[item.attr('data-video')],
+        width = video.width || '100%',
+        height = video.height || this._core.$stage.height(),
+        html;
 
     if (this._playing) {
       return;
@@ -2313,15 +2314,15 @@
 
     if (video.type === 'youtube') {
       html = '<iframe width="' + width + '" height="' + height + '" src="//www.youtube.com/embed/' +
-        video.id + '?autoplay=1&rel=0&v=' + video.id + '" frameborder="0" allowfullscreen></iframe>';
+          video.id + '?autoplay=1&rel=0&v=' + video.id + '" frameborder="0" allowfullscreen></iframe>';
     } else if (video.type === 'vimeo') {
       html = '<iframe src="//player.vimeo.com/video/' + video.id +
-        '?autoplay=1" width="' + width + '" height="' + height +
-        '" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>';
+          '?autoplay=1" width="' + width + '" height="' + height +
+          '" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>';
     } else if (video.type === 'vzaar') {
       html = '<iframe frameborder="0"' + 'height="' + height + '"' + 'width="' + width +
-        '" allowfullscreen mozallowfullscreen webkitAllowFullScreen ' +
-        'src="//view.vzaar.com/' + video.id + '/player?autoplay=true"></iframe>';
+          '" allowfullscreen mozallowfullscreen webkitAllowFullScreen ' +
+          'src="//view.vzaar.com/' + video.id + '/player?autoplay=true"></iframe>';
     }
 
     $('<div class="owl-video-frame">' + html + '</div>').insertAfter(item.find('.owl-video'));
@@ -2432,11 +2433,11 @@
     this.core.speed(0);
 
     var left,
-      clear = $.proxy(this.clear, this),
-      previous = this.core.$stage.children().eq(this.previous),
-      next = this.core.$stage.children().eq(this.next),
-      incoming = this.core.settings.animateIn,
-      outgoing = this.core.settings.animateOut;
+        clear = $.proxy(this.clear, this),
+        previous = this.core.$stage.children().eq(this.previous),
+        next = this.core.$stage.children().eq(this.next),
+        incoming = this.core.settings.animateIn,
+        outgoing = this.core.settings.animateOut;
 
     if (this.core.current() === this.previous) {
       return;
@@ -2445,23 +2446,23 @@
     if (outgoing) {
       left = this.core.coordinates(this.previous) - this.core.coordinates(this.next);
       previous.one($.support.animation.end, clear)
-        .css( { 'left': left + 'px' } )
-        .addClass('animated owl-animated-out')
-        .addClass(outgoing);
+          .css( { 'left': left + 'px' } )
+          .addClass('animated owl-animated-out')
+          .addClass(outgoing);
     }
 
     if (incoming) {
       next.one($.support.animation.end, clear)
-        .addClass('animated owl-animated-in')
-        .addClass(incoming);
+          .addClass('animated owl-animated-in')
+          .addClass(incoming);
     }
   };
 
   Animate.prototype.clear = function(e) {
     $(e.target).css( { 'left': '' } )
-      .removeClass('animated owl-animated-out owl-animated-in')
-      .removeClass(this.core.settings.animateIn)
-      .removeClass(this.core.settings.animateOut);
+        .removeClass('animated owl-animated-out owl-animated-in')
+        .removeClass(this.core.settings.animateIn)
+        .removeClass(this.core.settings.animateOut);
     this.core.onTransitionEnd();
   };
 
@@ -2761,7 +2762,7 @@
       'prepared.owl.carousel': $.proxy(function(e) {
         if (e.namespace && this._core.settings.dotsData) {
           this._templates.push('<div class="' + this._core.settings.dotClass + '">' +
-            $(e.content).find('[data-dot]').addBack('[data-dot]').attr('data-dot') + '</div>');
+              $(e.content).find('[data-dot]').addBack('[data-dot]').attr('data-dot') + '</div>');
         }
       }, this),
       'added.owl.carousel': $.proxy(function(e) {
@@ -2835,41 +2836,41 @@
    */
   Navigation.prototype.initialize = function() {
     var override,
-      settings = this._core.settings;
+        settings = this._core.settings;
 
     // create DOM structure for relative navigation
     this._controls.$relative = (settings.navContainer ? $(settings.navContainer)
-      : $('<div>').addClass(settings.navContainerClass).appendTo(this.$element)).addClass('disabled');
+        : $('<div>').addClass(settings.navContainerClass).appendTo(this.$element)).addClass('disabled');
 
     this._controls.$previous = $('<' + settings.navElement + '>')
-      .addClass(settings.navClass[0])
-      .html(settings.navText[0])
-      .prependTo(this._controls.$relative)
-      .on('click', $.proxy(function(e) {
-        this.prev(settings.navSpeed);
-      }, this));
+        .addClass(settings.navClass[0])
+        .html(settings.navText[0])
+        .prependTo(this._controls.$relative)
+        .on('click', $.proxy(function(e) {
+          this.prev(settings.navSpeed);
+        }, this));
     this._controls.$next = $('<' + settings.navElement + '>')
-      .addClass(settings.navClass[1])
-      .html(settings.navText[1])
-      .appendTo(this._controls.$relative)
-      .on('click', $.proxy(function(e) {
-        this.next(settings.navSpeed);
-      }, this));
+        .addClass(settings.navClass[1])
+        .html(settings.navText[1])
+        .appendTo(this._controls.$relative)
+        .on('click', $.proxy(function(e) {
+          this.next(settings.navSpeed);
+        }, this));
 
     // create DOM structure for absolute navigation
     if (!settings.dotsData) {
       this._templates = [ $('<div>')
-        .addClass(settings.dotClass)
-        .append($('<span>'))
-        .prop('outerHTML') ];
+          .addClass(settings.dotClass)
+          .append($('<span>'))
+          .prop('outerHTML') ];
     }
 
     this._controls.$absolute = (settings.dotsContainer ? $(settings.dotsContainer)
-      : $('<div>').addClass(settings.dotsClass).appendTo(this.$element)).addClass('disabled');
+        : $('<div>').addClass(settings.dotsClass).appendTo(this.$element)).addClass('disabled');
 
     this._controls.$absolute.on('click', 'div', $.proxy(function(e) {
       var index = $(e.target).parent().is(this._controls.$absolute)
-        ? $(e.target).index() : $(e.target).parent().index();
+          ? $(e.target).index() : $(e.target).parent().index();
 
       e.preventDefault();
 
@@ -2909,12 +2910,12 @@
    */
   Navigation.prototype.update = function() {
     var i, j, k,
-      lower = this._core.clones().length / 2,
-      upper = lower + this._core.items().length,
-      maximum = this._core.maximum(true),
-      settings = this._core.settings,
-      size = settings.center || settings.autoWidth || settings.dotsData
-        ? 1 : settings.dotsEach || settings.items;
+        lower = this._core.clones().length / 2,
+        upper = lower + this._core.items().length,
+        maximum = this._core.maximum(true),
+        settings = this._core.settings,
+        size = settings.center || settings.autoWidth || settings.dotsData
+            ? 1 : settings.dotsEach || settings.items;
 
     if (settings.slideBy !== 'page') {
       settings.slideBy = Math.min(settings.slideBy, settings.items);
@@ -2946,10 +2947,10 @@
    */
   Navigation.prototype.draw = function() {
     var difference,
-      settings = this._core.settings,
-      disabled = this._core.items().length <= settings.items,
-      index = this._core.relative(this._core.current()),
-      loop = settings.loop || settings.rewind;
+        settings = this._core.settings,
+        disabled = this._core.items().length <= settings.items,
+        index = this._core.relative(this._core.current()),
+        loop = settings.loop || settings.rewind;
 
     this._controls.$relative.toggleClass('disabled', !settings.nav || disabled);
 
@@ -2988,7 +2989,7 @@
       index: $.inArray(this.current(), this._pages),
       count: this._pages.length,
       size: settings && (settings.center || settings.autoWidth || settings.dotsData
-        ? 1 : settings.dotsEach || settings.items)
+          ? 1 : settings.dotsEach || settings.items)
     };
   };
 
@@ -3011,7 +3012,7 @@
    */
   Navigation.prototype.getPosition = function(successor) {
     var position, length,
-      settings = this._core.settings;
+        settings = this._core.settings;
 
     if (settings.slideBy == 'page') {
       position = $.inArray(this.current(), this._pages);
@@ -3128,9 +3129,9 @@
       'changed.owl.carousel': $.proxy(function(e) {
         if (e.namespace && e.property.name === 'position') {
           var current = this._core.items(this._core.relative(this._core.current())),
-            hash = $.map(this._hashes, function(item, hash) {
-              return item === current ? hash : null;
-            }).join();
+              hash = $.map(this._hashes, function(item, hash) {
+                return item === current ? hash : null;
+              }).join();
 
           if (!hash || window.location.hash.slice(1) === hash) {
             return;
@@ -3150,8 +3151,8 @@
     // register event listener for hash navigation
     $(window).on('hashchange.owl.navigation', $.proxy(function(e) {
       var hash = window.location.hash.substring(1),
-        items = this._core.$stage.children(),
-        position = this._hashes[hash] && items.index(this._hashes[hash]);
+          items = this._core.$stage.children(),
+          position = this._hashes[hash] && items.index(this._hashes[hash]);
 
       if (position === undefined || position === this._core.current()) {
         return;
@@ -3202,43 +3203,43 @@
 ;(function($, window, document, undefined) {
 
   var style = $('<support>').get(0).style,
-    prefixes = 'Webkit Moz O ms'.split(' '),
-    events = {
-      transition: {
-        end: {
-          WebkitTransition: 'webkitTransitionEnd',
-          MozTransition: 'transitionend',
-          OTransition: 'oTransitionEnd',
-          transition: 'transitionend'
+      prefixes = 'Webkit Moz O ms'.split(' '),
+      events = {
+        transition: {
+          end: {
+            WebkitTransition: 'webkitTransitionEnd',
+            MozTransition: 'transitionend',
+            OTransition: 'oTransitionEnd',
+            transition: 'transitionend'
+          }
+        },
+        animation: {
+          end: {
+            WebkitAnimation: 'webkitAnimationEnd',
+            MozAnimation: 'animationend',
+            OAnimation: 'oAnimationEnd',
+            animation: 'animationend'
+          }
         }
       },
-      animation: {
-        end: {
-          WebkitAnimation: 'webkitAnimationEnd',
-          MozAnimation: 'animationend',
-          OAnimation: 'oAnimationEnd',
-          animation: 'animationend'
+      tests = {
+        csstransforms: function() {
+          return !!test('transform');
+        },
+        csstransforms3d: function() {
+          return !!test('perspective');
+        },
+        csstransitions: function() {
+          return !!test('transition');
+        },
+        cssanimations: function() {
+          return !!test('animation');
         }
-      }
-    },
-    tests = {
-      csstransforms: function() {
-        return !!test('transform');
-      },
-      csstransforms3d: function() {
-        return !!test('perspective');
-      },
-      csstransitions: function() {
-        return !!test('transition');
-      },
-      cssanimations: function() {
-        return !!test('animation');
-      }
-    };
+      };
 
   function test(property, prefixed) {
     var result = false,
-      upper = property.charAt(0).toUpperCase() + property.slice(1);
+        upper = property.charAt(0).toUpperCase() + property.slice(1);
 
     $.each((property + ' ' + prefixes.join(upper + ' ') + upper).split(' '), function(i, property) {
       if (style[property] !== undefined) {
@@ -3290,18 +3291,18 @@
 
 // Uses Node, AMD or browser globals to create a module.
 (function (root, factory) {
-    if (typeof define === 'function' && define.amd) {
-        // AMD. Register as an anonymous module.
-        define(['jquery'], factory);
-    } else if (typeof exports === 'object') {
-        // Node. Does not work with strict CommonJS, but
-        // only CommonJS-like environments that support module.exports,
-        // like Node.
-        module.exports = factory(require('jquery'));
-    } else {
-        // Browser globals (root is window)
-        root.lightbox = factory(root.jQuery);
-    }
+  if (typeof define === 'function' && define.amd) {
+    // AMD. Register as an anonymous module.
+    define(['jquery'], factory);
+  } else if (typeof exports === 'object') {
+    // Node. Does not work with strict CommonJS, but
+    // only CommonJS-like environments that support module.exports,
+    // like Node.
+    module.exports = factory(require('jquery'));
+  } else {
+    // Browser globals (root is window)
+    root.lightbox = factory(root.jQuery);
+  }
 }(this, function ($) {
 
   function Lightbox(options) {
@@ -3330,12 +3331,12 @@
     wrapAround: false,
     disableScrolling: false,
     /*
-    Sanitize Title
-    If the caption data is trusted, for example you are hardcoding it in, then leave this to false.
-    This will free you to add html tags, such as links, in the caption.
+     Sanitize Title
+     If the caption data is trusted, for example you are hardcoding it in, then leave this to false.
+     This will free you to add html tags, such as links, in the caption.
 
-    If the caption data is user submitted or from some other untrusted source, then set this to true
-    to prevent xss and other injection attacks.
+     If the caption data is user submitted or from some other untrusted source, then set this to true
+     to prevent xss and other injection attacks.
      */
     sanitizeTitle: false
   };
@@ -3435,17 +3436,17 @@
     });
 
     /*
-      Show context menu for image on right-click
+     Show context menu for image on right-click
 
-      There is a div containing the navigation that spans the entire image and lives above of it. If
-      you right-click, you are right clicking this div and not the image. This prevents users from
-      saving the image or using other context menu actions with the image.
+     There is a div containing the navigation that spans the entire image and lives above of it. If
+     you right-click, you are right clicking this div and not the image. This prevents users from
+     saving the image or using other context menu actions with the image.
 
-      To fix this, when we detect the right mouse button is pressed down, but not yet clicked, we
-      set pointer-events to none on the nav div. This is so that the upcoming right-click event on
-      the next mouseup will bubble down to the image. Once the right-click/contextmenu event occurs
-      we set the pointer events back to auto for the nav div so it can capture hover and left-click
-      events as usual.
+     To fix this, when we detect the right mouse button is pressed down, but not yet clicked, we
+     set pointer-events to none on the nav div. This is so that the upcoming right-click event on
+     the next mouseup will bubble down to the image. Once the right-click/contextmenu event occurs
+     we set the pointer events back to auto for the nav div so it can capture hover and left-click
+     events as usual.
      */
     this.$nav.on('mousedown', function(event) {
       if (event.which === 3) {
@@ -3453,7 +3454,7 @@
 
         self.$lightbox.one('contextmenu', function() {
           setTimeout(function() {
-              this.$nav.css('pointer-events', 'auto');
+            this.$nav.css('pointer-events', 'auto');
           }.bind(self), 0);
         });
       }
@@ -3608,8 +3609,8 @@
   // Stretch overlay to fit the viewport
   Lightbox.prototype.sizeOverlay = function() {
     this.$overlay
-      .width($(document).width())
-      .height($(document).height());
+        .width($(document).width())
+        .height($(document).height());
   };
 
   // Animate the size of the lightbox to fit the image we are showing
@@ -3694,7 +3695,7 @@
     // Enable anchor clicks in the injected caption html.
     // Thanks Nate Wright for the fix. @https://github.com/NateWr
     if (typeof this.album[this.currentImageIndex].title !== 'undefined' &&
-      this.album[this.currentImageIndex].title !== '') {
+        this.album[this.currentImageIndex].title !== '') {
       var $caption = this.$lightbox.find('.lb-caption');
       if (this.options.sanitizeTitle) {
         $caption.text(this.album[this.currentImageIndex].title);
@@ -3702,13 +3703,13 @@
         $caption.html(this.album[this.currentImageIndex].title);
       }
       $caption.fadeIn('fast')
-        .find('a').on('click', function(event) {
-          if ($(this).attr('target') !== undefined) {
-            window.open($(this).attr('href'), $(this).attr('target'));
-          } else {
-            location.href = $(this).attr('href');
-          }
-        });
+          .find('a').on('click', function(event) {
+            if ($(this).attr('target') !== undefined) {
+              window.open($(this).attr('href'), $(this).attr('target'));
+            } else {
+              location.href = $(this).attr('href');
+            }
+          });
     }
 
     if (this.album.length > 1 && this.options.showImageNumberLabel) {
