@@ -76,50 +76,21 @@
   }
 .about-container {
   text-align: center;
-  background-color: #fff;
-  margin-top: 24%;
+  background-color: #ccc;
+  margin-top: 25%;
 }
 
-.about-container h2 {
+.about-container h3 {
   font-size: 24px;
-  letter-spacing: 0.5px;
+  letter-spacing: 1px;
   color: #121212;
   text-transform: uppercase;
-  margin: 40px;
-  margin-bottom: 0px;
   font-weight: 900;
 }
 
-.about-container h2 em {
-  font-style: normal;
-  color: #f78b26;
-}
-
-.about-container .under-line {
-  width: 60px;
-  height: 3px;
-  background-color: #121212;
-  margin: 15px auto 20px auto;
-}
-
-.about-container p {
-  font-size: 14px;
-  color: #343434;
-  margin: 15px 35px 30px 35px;
-}
-
-.about-container p em {
-  font-weight: 500;
-  font-style: normal;
-}
-
-.about-container img {
-  width: 100%;
-}
-
 .contact-container {
-  background-color: #fff;
-  margin-top: 29.5%;
+  background-color: #ccc;
+  margin-top: 25%;
 }
 
 .contact-form {
