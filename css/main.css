@@ -1,259 +1,65 @@
-body {
+ body {
     background-size: cover;
     background-attachment: fixed;
     background-position: center center;
     font-family: "Open Sans", sans-serif;
 }
-
-.page_wrapper {
-    width: 100%;
-    position: relative;
-}
-
-
-
-/*
-===============================================
---------------- CSS Demo ------------------
-===============================================
-*/
-.image-bg {
+ .image-bg {
 	background-image: url(../img/bg-img.jpg);
     background-repeat: no-repeat;
     background-size: cover;
-    max-width: 100%;
-    height: 100%;
-}
-
-h3.h3_title {
-    text-align: center;
-    font-family: "Roboto", sans-serif;
-    font-size: 30px;
-    line-height: 33px;
-    font-weight: normal;
-    margin: 0;
-    text-align: center;
-    margin-bottom: 30px;
-}
-
-.header-top {
-    background-color: #333333;
-    color: #fff;
-    padding: 24px 0 39px;
-}
-.header-top h2 {
-    font-family: "Oswald", sans-serif;
-    font-size: 30px;
-    line-height: 33px;
-    font-weight: normal;
-    margin: 0;
-    text-align: center;
-}
-.header-bottom {
-    background-color: #fff;
-}
-
-.btn-pursache {
-    color: #fff;
-    display: block;
-    font-family: "Oswald", sans-serif;
-    font-size: 30px;
-    height: 95px;
-    line-height: 95px;
-    padding: 0 30px;
-    position: relative;
-    z-index: 1;
-    text-decoration: none !important;
-    -webkit-transition: all 0s ease-in-out 0s;
-    -moz-transition: all 0s ease-in-out 0s;
-    -o-transition: all 0s ease-in-out 0s;
-    transition: all 0s ease-in-out 0s;
-}
-.btn-pursache:before {
-    content: "";
-    height: 100%;
-    left: 0;
-    position: absolute;
-    top: 0;
     width: 100%;
-    z-index: -1;
-    -webkit-transform: skewX(-15deg);
-    -moz-transform: skewX(-15deg);
-    -ms-transform: skewX(-15deg);
-    -o-transform: skewX(-15deg);
-    transform: skewX(-15deg);
-}
-.btn-pursache:after {
-    background-color: rgba(0, 0, 0, 0.1);
-    content: "";
     height: 100%;
-    left: 0;
-    position: absolute;
-    top: 0;
-    width: 0;
-    z-index: -1;
-    -webkit-transform: skewX(-15deg);
-    -moz-transform: skewX(-15deg);
-    -ms-transform: skewX(-15deg);
-    -o-transform: skewX(-15deg);
-    transform: skewX(-15deg);
-    -webkit-transition: all 350ms cubic-bezier(0.77, 0, 0.175, 1) 0s;
-    -moz-transition: all 350ms cubic-bezier(0.77, 0, 0.175, 1) 0s;
-    -ms-transition: all 350ms cubic-bezier(0.77, 0, 0.175, 1) 0s;
-    -o-transition: all 350ms cubic-bezier(0.77, 0, 0.175, 1) 0s;
 }
-.btn-pursache:hover,
-.btn-pursache:focus {
-    color: #fff;
-}
-.btn-pursache:hover:after,
-.btn-pursache:focus:after {
-    width: 100%;
-}
-.dark-bg {
-    background-image: url(../img/bg-img.jpg);
-    background-repeat: no-repeat;
-    background-size: cover;
-    max-width: 100%;
-    height: 100vh;
-}
-.white-bg {
-    background-color: #ffffff;
-}
-.other-bg {
-    background-color: #f1f3f7;
-}
-
-.effect-tabs {
-    text-align: center;
-    margin-bottom: 35px;
-    font-family: "Roboto", sans-serif;
-}
-.effect-tabs h3 {
-    font-family: "Roboto", sans-serif;
-    color: #fff;
-    font-size: 20px;
-    text-transform: capitalize;
-    font-weight: bold;
-}
-.effect-tabs .dropdown-select {
-    position: relative;
-    width: 200px;
-    margin: 0;
-    padding: 6px 20px;
-    height: 40px;
-    line-height: 14px;
-    font-size: 13px;
-    color: #fff;
-    background: #3C3E40;
-    border: 0;
-    border-radius: 0;
-    margin-top: 10px;
-    margin-left: 12px;
-}
-
-.demo-header {
-    text-align: center;
-    padding: 30px;
-}
-.demo-header a {
-    color: #fff;
-    background: #333;
-    text-decoration: none;
-    padding: 10px;
-}
-.demo-header a:hover {
-    color: #fff;
-    background-color: rgba(0,0,0,0.6);
-    text-decoration: none;
-}
-.demo-header a.current-demo {
-    color: #fff;
-    text-decoration: none;
-}
-
-.site-footer {
-    background-color: #222222;
-    border-top: 1px solid #303030;
-    padding: 42px 0;
-    font-family: "Dosis", sans-serif;
-}
-.site-footer .copyright {
-    font-size: 16px;
-    color: #757575;
-}
-.site-footer .copyright span a {
-    color: #f3f3f3;
-}
-
-.site-footer .credit a {
-    color: #f3f3f3;
-}
-/*
-========================================
------------ HOME STYLE -----------------
-========================================
-*/
-
- .resp-tab-content {
-    padding: 0;
-    overflow: hidden;
- }
  .home-container {
-  margin-top: 28.5%;
+  margin-top: 25%;
   background-color: #fff;
  }
 
  .home-container .left-content {
-    padding-top: 25%;
-    padding-left: 35px;
+    padding-top: 10%;
+    padding-left: 30px;
+
  }
 
  .home-container .left-content .left-line {
     width: 3px;
     height: 74px;
-    background-color: #121212;
+    background-color: #000;
     float: left;
     margin-right: 15px;
  }
-
- .home-container .left-content h2 {
-    font-size: 32px;
-    letter-spacing: 0.5px;
-    color: #121212;
-    text-transform: uppercase;
-    margin: 0px;
-    font-weight: 900;
+ .home-container .left-content .primary-button {
+   float: right;
+   margin-top: 2%;
+   margin-right: 10%;
+ }
+ .home-container .left-content .primary-button a {
+   font-size: 8px;
+   text-transform: uppercase;
+   font-weight: 700;
+   color: #cccccc;
+   border: 1px solid #cccccc;
+   padding: 10px;
  }
 
-  .home-container .left-content h2 em {
-    font-style: normal;
-    color: #f78b26;
-  }
-
+ .home-container .left-content h2 {
+    font-size: 40px;
+    color: #000;
+    margin: 15px;
+    font-weight: 900;
+ }
   .home-container .left-content p {
-    margin-top: 30px;
-    font-size: 14px;
+    margin-top: 20px;
+    font-size: 16px;
     font-style: italic;
     color: #343434;
   }
-
-  .home-container .left-content p em {
-    font-weight: 500;
-  }
-
-  .home-container .left-content .primary-button {
-    margin-top: 30px;
-  }
-
-  .home-container .left-content .primary-button a {
-    font-size: 11px;
-    text-transform: uppercase;
-    font-weight: 700;
-    color: #121212;
-    border: 1px solid #343434;
-    padding: 11px 14px;
-  }
+ .home-container .left-content li{
+   font-size: 14px;
+   text-align: left;
+   line-height: 25px;
+ }
 
   .home-container .left-content .primary-button a:hover {
     -moz-transition: all 0.2s linear;
@@ -264,24 +70,10 @@ h3.h3_title {
     color: #f78b26;
     text-decoration: none;
   }
-
-   .home-container .right-content {
-      margin-bottom: -1px;
-   }
-
   .home-container .right-content img {
     overflow: hidden;
     width: 100%;
   }
-
-
-
-/*
-========================================
------------ ABOUT STYLE -----------------
-========================================
-*/
-
 .about-container {
   text-align: center;
   background-color: #fff;
@@ -324,75 +116,6 @@ h3.h3_title {
 .about-container img {
   width: 100%;
 }
-
-/*
-========================================
------------ PROJECTS STYLE -----------------
-========================================
-*/
-
-.projects-container {
-  background-color: #fff;
-  margin-top: 30%;
-  padding: 40px 30px 0px  40px;
-}
-
-.project-item {
-  position: relative;
-  text-align: center;
-}
-
-.project-item img {
-  display: block;
-  max-width: 100%;
-  height: auto;
-}
-
-.project-item .thumb-holder .hover-effect {
-  position: absolute;
-  top: 0;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  height: 100%;
-  width: 100%;
-  opacity: 0;
-  transition: .5s ease;
-  background-color: rgba(249, 139, 38, 0.9);
-}
-
-.project-item .thumb-holder .hover-effect .hover-content {
-  position: absolute;
-  top: 40%;
-  width: 100%;
-}
-
-.project-item .thumb-holder .hover-effect .hover-content img {
-  max-width: 100%;
-  text-align: center;
-  margin: 0 auto;
-  width: 40px;
-}
-
-.project-item .thumb-holder .hover-effect .hover-content h4 {
-  font-size: 14px;
-  font-weight: 700;
-  text-transform: uppercase;
-  letter-spacing: 0.5px;
-  color: #fff;
-}
-
-.project-item:hover .hover-effect {
-  opacity: 1;
-}
-
-
-
-/*
-========================================
------------ CONTACT STYLE ------------
-========================================
-*/
 
 .contact-container {
   background-color: #fff;
@@ -482,29 +205,18 @@ h3.h3_title {
   font-style: normal;
 }
 
-
-/*
-========================================
------------ FOOTER STYLE -----------------
-========================================
-*/
-
 footer {
-  background-color: #f4f4f4;
+  background-color: #444444;
   text-align: center;
 }
 
 footer p {
   font-size: 13px;
-  color: #7a7a7a;
+  color: #fff;
   padding: 20px 0px 15px 0px;
   margin: 0px;
 }
 
-footer p em {
-  font-style: normal;
-  color: #f78b26;
-}
 
 
 
