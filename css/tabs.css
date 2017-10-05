@@ -1,44 +1,10 @@
-/*
-*  Table of Contents:
-*
-*/
-
-/*
-=====================================================
---------------- VerticalTab Tabs -----------------
-=====================================================
-*/
-
-.tabs_scroll {
-    height: auto;
-    -webkit-box-sizing:border-box;
-    -moz-box-sizing:border-box;
-    box-sizing:border-box;		
-}
-.nicescroll-rails {
-	width: 12px !important;
-    background: rgba(0,0,0,0.1) !important;
-    -webkit-border-radius: 1px;
-    -moz-border-radius: 1px;
-    border-radius: 1px;
-}
-
-.nicescroll-cursors {
-	
-} 
-
-
-/*
---------------- Tabs Style ------------------
-*/
-
 .resp-tabs-list {
-	padding: 22.5% 0px!important;
+	padding: 20% 0px!important;
 }
 
 .VerticalTab.tabs_ver_6.resp-vtabs ul.resp-tabs-list {
     float: right!important;
-    width: 17.5%;
+    width: 15%;
 	margin-top: 0px !important;
 }
 .VerticalTab.tabs_ver_6.resp-vtabs .resp-tabs-container {
@@ -55,7 +21,7 @@
 .VerticalTab.tabs_ver_6 .resp-tabs-list .logo img {
 	max-width: 100%;
 	overflow: hidden;
-	margin-bottom: 60px;
+	margin-bottom: 40px;
 }
 .VerticalTab.tabs_ver_6 .resp-tabs-list li {
 	margin: 10px 0px;
@@ -81,43 +47,8 @@
     transition: all 0.2s linear;
 }
 
-.VerticalTab.tabs_ver_6 .resp-tabs-list li i {
-	font-size: 22px;
-	-webkit-transition: background 0.3s, color 0.3s, box-shadow 0.3s;
-	-moz-transition: background 0.3s, color 0.3s, box-shadow 0.3s;
-	transition: background 0.3s, color 0.3s, box-shadow 0.3s;
-	display: inline-block;
-	cursor: pointer;
-	margin: 0;
-	text-align: center;
-	position: relative;
-	z-index: 2;
-	border-radius: 50%;
-	-o-border-radius: 50%;
-	-ms-border-radius: 50%;
-	-webkit-border-radius: 50%;
-	-moz-border-radius: 50%;
-	display: block;
-	color: #fff;
-	margin-bottom: 5px;
-	transition: all 0.2s linear;
-	-moz-transition: all 0.2s linear;
-    -o-transition: all 0.2s linear;
-    -webkit-transition: all 0.2s linear;
-    transition: all 0.2s linear;
-
-}
-
-/*
-=====================================================
---------------- Tabs Responsive ------------------
-=====================================================
-*/
-
 h2.resp-accordion {
-	font-size: 14px;
-	font-weight: 700;
-	text-align: center;
+
 	text-transform: uppercase;
 	color: #121212;
 	margin: 20px 30px;
@@ -127,7 +58,7 @@ h2.resp-accordion {
 	border: 0;
 	line-height: 0px;
 	cursor: pointer;
-	padding: 30px 15px;
+	padding: 50px 15px;
 	border-left: 0 !important;
 	border-right: 0 !important;
 }
