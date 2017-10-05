@@ -87,7 +87,11 @@
   text-transform: uppercase;
   font-weight: 900;
 }
+.production-container,.experience-container{
 
+    background-color: #fff;
+    margin-top: 25%;
+}
 .contact-container {
   background-color: #ccc;
   margin-top: 25%;
@@ -344,6 +348,18 @@ footer p {
     width: 100%;
     overflow: hidden;
   }
+    .production-container{
+        margin-top: 0%;
+    }
+    .production-container img{
+        width: 60%;
+    }
+    .experience-container{
+        margin-top: 0%;
+    }
+    .experience-container img{
+        width: 60%;
+    }
   .about-container {
     margin-top: 0%;
   }
