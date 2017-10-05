@@ -48,7 +48,9 @@
 }
 
 h2.resp-accordion {
-
+	font-weight: 700;
+	font-size:14px;
+    text-align: center;
 	text-transform: uppercase;
 	color: #121212;
 	margin: 20px 30px;
