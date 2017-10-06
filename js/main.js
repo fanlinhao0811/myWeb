@@ -210,41 +210,7 @@
     this._core.$element.on(this._handlers);
   };
 
-  /**
-   * Default options.
-   * @public
-   */
-  AutoRefresh.Defaults = {
-    autoRefresh: true,
-    autoRefreshInterval: 500
-  };
 
-  /**
-   * Watches the element.
-   */
-  AutoRefresh.prototype.watch = function() {
-    if (this._interval) {
-      return;
-    }
-
-    this._visible = this._core.$element.is(':visible');
-    this._interval = window.setInterval($.proxy(this.refresh, this), this._core.settings.autoRefreshInterval);
-  };
-
-  /**
-   * Refreshes the element.
-   */
-  AutoRefresh.prototype.refresh = function() {
-    if (this._core.$element.is(':visible') === this._visible) {
-      return;
-    }
-
-    this._visible = !this._visible;
-
-    this._core.$element.toggleClass('owl-hidden', !this._visible);
-
-    this._visible && (this._core.invalidate('width') && this._core.refresh());
-  };
 
   /**
    * Destroys the plugin.
