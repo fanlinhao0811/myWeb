@@ -1,122 +1,21 @@
 (function($, window, document, undefined) {
-
-  /**
-   * Creates a carousel.
-   * @class The Owl Carousel.
-   * @public
-   * @param {HTMLElement|jQuery} element - The element to create the carousel for.
-   * @param {Object} [options] - The options
-   */
   function Owl(element, options) {
-
-    /**
-     * Current settings for the carousel.
-     * @public
-     */
     this.settings = null;
-
-    /**
-     * Current options set by the caller including defaults.
-     * @public
-     */
     this.options = $.extend({}, Owl.Defaults, options);
-
-    /**
-     * Plugin element.
-     * @public
-     */
     this.$element = $(element);
-
-    /**
-     * Proxied event handlers.
-     * @protected
-     */
     this._handlers = {};
-
-    /**
-     * References to the running plugins of this carousel.
-     * @protected
-     */
     this._plugins = {};
-
-    /**
-     * Currently suppressed events to prevent them from beeing retriggered.
-     * @protected
-     */
-    this._supress = {};
-
-    /**
-     * Absolute current position.
-     * @protected
-     */
     this._current = null;
-
-    /**
-     * Animation speed in milliseconds.
-     * @protected
-     */
     this._speed = null;
-
-    /**
-     * Coordinates of all items in pixel.
-     * @todo The name of this member is missleading.
-     * @protected
-     */
     this._coordinates = [];
-
-    /**
-     * Current breakpoint.
-     * @todo Real media queries would be nice.
-     * @protected
-     */
     this._breakpoint = null;
-
-    /**
-     * Current width of the plugin element.
-     */
     this._width = null;
-
-    /**
-     * All real items.
-     * @protected
-     */
     this._items = [];
-
-    /**
-     * All cloned items.
-     * @protected
-     */
     this._clones = [];
-
-    /**
-     * Merge values of all items.
-     * @todo Maybe this could be part of a plugin.
-     * @protected
-     */
     this._mergers = [];
-
-    /**
-     * Widths of all items.
-     */
     this._widths = [];
-
-    /**
-     * Invalidated parts within the update process.
-     * @protected
-     */
     this._invalidated = {};
-
-    /**
-     * Ordered list of workers for the update process.
-     * @protected
-     */
     this._pipe = [];
-
-    /**
-     * Current state information for the drag operation.
-     * @todo #261
-     * @protected
-     */
     this._drag = {
       time: null,
       target: null,
@@ -127,12 +26,6 @@
       },
       direction: null
     };
-
-    /**
-     * Current state information and their tags.
-     * @type {Object}
-     * @protected
-     */
     this._states = {
       current: {},
       tags: {
@@ -213,29 +106,6 @@
     stageClass: 'owl-stage',
     stageOuterClass: 'owl-stage-outer',
     grabClass: 'owl-grab'
-  };
-
-  /**
-   * Enumeration for width.
-   * @public
-   * @readonly
-   * @enum {String}
-   */
-  Owl.Width = {
-    Default: 'default',
-    Inner: 'inner',
-    Outer: 'outer'
-  };
-
-  /**
-   * Enumeration for types.
-   * @public
-   * @readonly
-   * @enum {String}
-   */
-  Owl.Type = {
-    Event: 'event',
-    State: 'state'
   };
 
 
@@ -465,53 +335,6 @@
     this._core.$element.on(this._handlers);
   };
 
-  /**
-   * Default options.
-   * @public
-   */
-  Lazy.Defaults = {
-    lazyLoad: false
-  };
-
-  /**
-   * Loads all resources of an item at the specified position.
-   * @param {Number} position - The absolute position of the item.
-   * @protected
-   */
-  Lazy.prototype.load = function(position) {
-    var $item = this._core.$stage.children().eq(position),
-        $elements = $item && $item.find('.owl-lazy');
-
-    if (!$elements || $.inArray($item.get(0), this._loaded) > -1) {
-      return;
-    }
-
-    $elements.each($.proxy(function(index, element) {
-      var $element = $(element), image,
-          url = (window.devicePixelRatio > 1 && $element.attr('data-src-retina')) || $element.attr('data-src');
-
-      this._core.trigger('load', { element: $element, url: url }, 'lazy');
-
-      if ($element.is('img')) {
-        $element.one('load.owl.lazy', $.proxy(function() {
-          $element.css('opacity', 1);
-          this._core.trigger('loaded', { element: $element, url: url }, 'lazy');
-        }, this)).attr('src', url);
-      } else {
-        image = new Image();
-        image.onload = $.proxy(function() {
-          $element.css({
-            'background-image': 'url("' + url + '")',
-            'opacity': '1'
-          });
-          this._core.trigger('loaded', { element: $element, url: url }, 'lazy');
-        }, this);
-        image.src = url;
-      }
-    }, this));
-
-    this._loaded.push($item.get(0));
-  };
 
   /**
    * Destroys the plugin.
@@ -652,19 +475,7 @@
      */
     this._core = carousel;
 
-    /**
-     * Cache all video URLs.
-     * @protected
-     * @type {Object}
-     */
-    this._videos = {};
 
-    /**
-     * Current playing item.
-     * @protected
-     * @type {jQuery}
-     */
-    this._playing = null;
 
     /**
      * All event handlers.
@@ -717,17 +528,6 @@
       this.play(e);
     }, this));
   };
-
-  /**
-   * Default options.
-   * @public
-   */
-  Video.Defaults = {
-    video: false,
-    videoHeight: false,
-    videoWidth: false
-  };
-
 
   /**
    * Creates video thumbnail.
