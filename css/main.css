@@ -88,12 +88,12 @@
   font-weight: 900;
 }
  .about-container .progress .title{
-     width: 15%;
+     width: 24%;
      background: #838B8B;
      float: left;
  }
  .about-container .progress .progress-bar{
-     width: 85%;
+     width: 76%;
  }
 .production-container,.experience-container{
 
