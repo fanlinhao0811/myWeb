@@ -391,6 +391,9 @@ footer p {
   .more-info {
     padding: 0px 30px 30px 30px;
   }
+    .more-info .map{
+        overflow: hidden;
+    }
 }
 
 @media (max-width: 991px){
