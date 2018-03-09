@@ -69,6 +69,11 @@
     border-color: #f78b26;
     color: #f78b26;
     text-decoration: none;
+	}
+	.home-container .right-content .header{
+		width: 90%;
+		height: 100%;
+		background: #000;
   }
   .home-container .right-content img {
     overflow: hidden;
