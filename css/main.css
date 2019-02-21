@@ -5,7 +5,7 @@
     font-family: "Open Sans", sans-serif;
 }
  .image-bg {
-	background-image: url(../img/bg-img.jpg);
+	background-image: url('https://api.yingjoy.cn/pic/?t=bing&w=1366');
     background-repeat: no-repeat;
     background-size: cover;
     width: 100%;
@@ -14,6 +14,10 @@
  .home-container {
   margin-top: 25%;
   background-color: #fff;
+ }
+ .progress{
+   height: 100%;
+   width: 100%;
  }
 
  .home-container .left-content {
@@ -69,11 +73,6 @@
     border-color: #f78b26;
     color: #f78b26;
     text-decoration: none;
-	}
-	.home-container .right-content .header{
-		width: 90%;
-		height: 100%;
-		background: #000;
   }
   .home-container .right-content img {
     overflow: hidden;
@@ -101,7 +100,6 @@
      width: 76%;
  }
 .production-container,.experience-container{
-
     background-color: #fff;
     margin-top: 25%;
     font-size: 24px;
