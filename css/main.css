@@ -5,7 +5,7 @@
     font-family: "Open Sans", sans-serif;
 }
  .image-bg {
-	background-image: url('https://api.yingjoy.cn/pic/?t=bing&w=1366');
+	background-image: url('http://api.yingjoy.cn/pic/?t=bing&w=1366');
     background-repeat: no-repeat;
     background-size: cover;
     width: 100%;
